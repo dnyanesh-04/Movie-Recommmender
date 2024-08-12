@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Recommender System</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="center">Movie Recommender System</h1>
+        <h2 class="center">Select a movie:</h2>
+
+        <form method="post" class="center form-inline" action="{% url 'get_recommendations' %}">
+            {% csrf_token %}
+            <select name="movie_id">
+                <option value="" disabled selected>Select a movie</option>
+                {% for movie in movies %}
+                    <option value="{{ movie.id }}">{{ movie.title }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Get Recommendations</button>
+        </form>
+
+        {% if selected_movie %}
+            <h2 class="center">You selected: {{ selected_movie.title }}</h2>
+            <div class="selected-movie center">
+                <img src="{{ selected_movie.image.url }}" alt="{{ selected_movie.title }}">
+            </div>
+            <h2 class="center">Recommended Movies:</h2>
+            <div class="recommended-movies">
+                {% for movie in recommended_movies %}
+                    <div class="movie">
+                        <img src="{{ movie.image.url }}" alt="{{ movie.title }}">
+                        <p>{{ movie.title }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+    
+    <div class="footer">
+        <p>Movie Recommender &copy 2024</p>
+        <p>A Dnyanesh Mohite Production</p>
+    </div>
+</body>
+</html>
+

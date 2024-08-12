@@ -1,0 +1,65 @@
+.container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.center {
+    text-align: center;
+}
+
+.form-inline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Add some space between the dropdown and the button */
+}
+
+.recommended-movies {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.recommended-movies .movie {
+    margin: 10px;
+    text-align: center;
+}
+
+.recommended-movies .movie img,
+.selected-movie img {
+    width: 200px; /* Set all images to the same width */
+    height: 225px; /* Set all images to the same height */
+}
+
+/* Make the website responsive for Mobile L-425px */
+@media (max-width: 625px) {
+    h1, h2, select, button {
+        font-size: 18px; /* Adjust font size for smaller screens */
+        width: 100%; /* Make headings, select, and button full width */
+        margin-bottom: 10px; /* Adds space between elements */
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    select {
+        margin-bottom: 10px;
+    }
+
+    .movie img {
+        width: 200px; /* Reduce image size */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .recommended-movies {
+        display: flex;
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center the images */
+    }
+
+    .recommended-movies .movie {
+        margin: 5px 0; /* Space between images */
+    }
+}

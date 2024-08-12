@@ -1,0 +1,127 @@
+/* General styling */
+body {
+    background-color: black; /* Set the background color to black */
+    color: white; /* Set all text to white */
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.center {
+    text-align: center;
+}
+
+.form-inline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Add some space between the dropdown and the button */
+    margin-bottom: 20px; /* Space below the form */
+}
+
+h1 {
+    color: white; 
+    font-family: 'Times New Roman';
+    margin-bottom: 18px;
+    margin-top: -05px;
+}
+
+h2 {
+    color: white;
+    font-family: 'Times New Roman';
+    margin-bottom: 20px;
+}
+
+select, button {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    color: black;
+}
+
+button {
+    background-color: orange;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: darkorange;
+}
+
+.recommended-movies {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.recommended-movies .movie {
+    margin: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.recommended-movies .movie p {
+    font-size: 20px;
+    margin-top: 09px;
+}
+
+.recommended-movies .movie:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.recommended-movies .movie img,
+.selected-movie img {
+    width: 180px; /* Set all images to the same width */
+    height: 250px; /* Set all images to the same height */
+    border-radius: 10px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+@media (max-width: 625px) {
+    h1, h2, select, button {
+        font-size: 14px; /* Further reduce font size for smaller screens */
+        width: 100%; /* Keep the headings, select, and button full width */
+        margin-bottom: 10px; /* Adds space between elements */
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    select {
+        margin-bottom: 10px;
+        font-size: 12px; /* Significantly reduce the font size of the dropdown list */
+        width: 70%; /* Make the dropdown list narrower */
+    }
+
+    .movie img {
+        width: 120px; /* Further reduce image size */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .recommended-movies {
+        display: flex;
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center the images */
+    }
+
+    .recommended-movies .movie {
+        margin: 5px 0; /* Space between images */
+    }
+}
+
